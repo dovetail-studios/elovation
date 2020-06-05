@@ -1,5 +1,5 @@
 class SlackNotifier
-  def initialize(username = "DoveGammon", icon_emoji = ":game_die:")
+  def initialize(username = "DovePong", icon_emoji = ":table_tennis_paddle_and_ball:")
     @webhook_url = ENV["SLACK_WEBHOOK_URL"]
     @username = username
     @icon_emoji = icon_emoji
