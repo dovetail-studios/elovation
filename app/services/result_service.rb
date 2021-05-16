@@ -22,7 +22,14 @@ class ResultService
 
         result.save!
 
-        SlackNotifier.new.send("#{result.winners.first.name} defeated #{result.losers.first.name}")
+        verb = [
+          "conquered", "crushed" "rolled", "overcame", "ground down",
+          "demoralized", "vanquished", "shot down", "foiled", "wrecked",
+          "murked", "frustrated", "stymied", "taught a nice lesson to",
+          "schooled", "pwned", "whooped", "how bout dem apples-ed", "bossed",
+          "sauced", "smoked", "booped", "rinsed", "sacked", "rocked", "clobbered"
+        ].sample
+        SlackNotifier.new.send("#{result.winners.first.name} #{verb} #{result.losers.first.name}")
 
         OpenStruct.new(
           success?: true,
