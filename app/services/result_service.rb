@@ -23,11 +23,14 @@ class ResultService
         result.save!
 
         verb = [
-          "conquered", "crushed" "rolled", "overcame", "ground down",
+          "conquered", "crushed", "rolled", "overcame", "ground down",
           "demoralized", "vanquished", "shot down", "foiled", "wrecked",
           "murked", "frustrated", "stymied", "taught a nice lesson to",
           "schooled", "pwned", "whooped", "how bout dem apples-ed", "bossed",
-          "sauced", "smoked", "booped", "rinsed", "sacked", "rocked", "clobbered"
+          "sauced", "smoked", "booped", "rinsed", "sacked", "rocked", "clobbered",
+          "gently sauteed", "cooked", "won against", "absolutely punished", "beat fair and square",
+          "probably cheated but still won against", "was kind but firm to", "gave a paddlin to"
+
         ].sample
         SlackNotifier.new.send("#{result.winners.first.name} #{verb} #{result.losers.first.name}")
 
