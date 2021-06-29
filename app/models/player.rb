@@ -26,6 +26,7 @@ class Player < ActiveRecord::Base
   end
 
   validates :name, uniqueness: true, presence: true
+  validates :name, length: { maximum: 25 }
   validates :email, allow_blank: true, format: /@/
 
   def as_json
